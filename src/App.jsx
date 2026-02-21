@@ -5,10 +5,10 @@ function App() {
   const [fromCurrency, setFromCurrency] = useState("USD");
   const [toCurrency, setToCurrency] = useState("EUR");
   const [result, setResult] = useState(null);
+  const [history, setHistory] = useState([]);
 
   const currencies = ["USD", "EUR", "GBP", "KES", "JPY"];
-
-  const API_KEY = "7eda07bf0d2fa6c84f4ce0b5"; // your API key
+  const API_KEY = "7eda07bf0d2fa6c84f4ce0b5"; // Your API Key
 
   const handleConvert = async () => {
     if (!amount) {
@@ -30,6 +30,18 @@ function App() {
 
       const converted = amount * data.conversion_rates[toCurrency];
       setResult(converted.toFixed(2));
+
+      // Save to history
+      setHistory((prevHistory) => [
+        {
+          amount,
+          fromCurrency,
+          toCurrency,
+          result: converted.toFixed(2),
+          date: new Date().toLocaleString(),
+        },
+        ...prevHistory,
+      ]);
     } catch (error) {
       console.error("Fetch error:", error);
       alert("Error fetching conversion. Check console.");
@@ -90,6 +102,29 @@ function App() {
       {result !== null && (
         <div className="mt-4 p-4 border rounded bg-white w-64 text-center text-lg font-semibold text-green-700">
           Converted Amount: {result} {toCurrency}
+        </div>
+      )}
+
+      {/* Conversion History */}
+      {history.length > 0 && (
+        <div className="mt-6 w-80">
+          <h2 className="text-xl font-semibold mb-2 text-blue-700">
+            Conversion History
+          </h2>
+          <div className="flex flex-col gap-2 max-h-64 overflow-y-auto">
+            {history.map((item, index) => (
+              <div
+                key={index}
+                className="p-2 bg-white border rounded shadow-sm flex justify-between"
+              >
+                <span>
+                  {item.amount} {item.fromCurrency} → {item.result}{" "}
+                  {item.toCurrency}
+                </span>
+                <span className="text-xs text-gray-500">{item.date}</span>
+              </div>
+            ))}
+          </div>
         </div>
       )}
     </div>
