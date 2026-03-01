@@ -1,20 +1,21 @@
-<<<<<<< HEAD
-# React + Vite
+# 💱 Currency Converter Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The Currency Converter Application is a web-based tool that allows users to convert amounts between different currencies using real-time exchange rates fetched from a public currency API such as ExchangeRate-API. Users can select their desired currencies, enter an amount, and instantly view the converted result.
 
-Currently, two official plugins are available:
+The application features a clean and responsive user interface built with Tailwind CSS, ensuring a smooth experience across different devices. This project demonstrates API integration, dynamic data rendering, responsive frontend design, and deployment skills by hosting the final application on platforms like Netlify or Vercel.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
+- Fetch real-time exchange rates from a public currency API
+- Select currencies and input amount for conversion
+- Display converted amount instantly
+- Responsive design using Tailwind CSS
+- Deployed on Netlify or Vercel
 
-## React Compiler
+## 🛠️ Technologies Used
+- HTML
+- JavaScript
+- Tailwind CSS
+- Currency Exchange API
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-=======
-# currency-converter
->>>>>>> 9a1e567072700913e8ebd44cde141f2b492f3340
+## 🌐 Deployment
+The application is deployed on Netlify/Vercel for public access.
